@@ -37,7 +37,7 @@ const Footer = (): JSX.Element => {
                         <div className="footer_nav-header">{t("pages")}</div>
                         <NavLink className="footer_nav-link" to="/home">{t("home")}</NavLink>
                         <NavLink className="footer_nav-link" to="/ourteam">{t("ourteam")}</NavLink>
-                        <NavLink className="footer_nav-link" to="/blog">{t("blog")}</NavLink>
+                        <NavLink className="footer_nav-link" to="/news">{t("blog")}</NavLink>
                         <NavLink className="footer_nav-link" to="/ourproducts">{t("ourproducts")}</NavLink>
                     </Nav>
                 </div>

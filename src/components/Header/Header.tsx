@@ -62,7 +62,7 @@ const Header = (): JSX.Element => {
                 <Nav className="header_nav-links">
                     <NavLink className="header_nav-link" activeClassName="header_nav-link-active" to="/home">{t("home")}</NavLink>
                     <NavLink className="header_nav-link" activeClassName="header_nav-link-active" to="/ourteam">{t("ourteam")}</NavLink>
-                    <NavLink className="header_nav-link" activeClassName="header_nav-link-active" to="/blog">{t("blog")}</NavLink>
+                    <NavLink className="header_nav-link" activeClassName="header_nav-link-active" to="/news">{t("blog")}</NavLink>
                     <NavLink className="header_nav-link" activeClassName="header_nav-link-active" to="/ourproducts">{t("ourproducts")}</NavLink>
                     {!isLoggedIn ? 
                     <>

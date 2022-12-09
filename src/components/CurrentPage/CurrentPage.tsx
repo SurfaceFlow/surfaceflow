@@ -9,6 +9,10 @@ import Header from '../Header/Header'
 import OurTeam from '../OurTeam/OurTeam'
 import OurProducts from '../OurProducts/OurProducts'
 import Blog from '../Blog/Blog'
+import FirstNews from '../Blog/FirstNews'
+import SecondNews from '../Blog/SecondNews'
+import ThirdNews from '../Blog/ThirdNews'
+import News from '../Blog/News'
 import Footer from '../Footer/Footer'
 import './currentpage.scss'
 
@@ -32,6 +36,10 @@ const CurrentPage = () => {
                             <Route path='/login' component={LoginPage} />
                             <Route path='/ourproducts' component={OurProducts} />
                             <Route path='/blog' component={Blog} />
+                            <Route path='/firstnews' component={FirstNews} />
+                            <Route path='/secondnews' component={SecondNews} />
+                            <Route path='/thirdnews' component={ThirdNews} />News
+                            <Route path='/news' component={News} />
 
                             <Redirect from='/' to='/home'/>
                         </Switch>

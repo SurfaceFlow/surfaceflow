@@ -2,12 +2,13 @@ import avatar_alexkay from '../../images/avatar_alexkay.png'
 import avatar_alkhimovmv from '../../images/avatar_alkhimovmv.png'
 import './ourteam.scss'
 import { useTranslation } from 'react-i18next'
+import { motion } from 'framer-motion/dist/framer-motion'
 
-const OurTeam = (): JSX.Element => {
+const OurTeam = () => {
     const { t } = useTranslation()
 
     return (
-        <div className="py-5 our_team">
+        <motion.div className="py-5 our_team" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ easy: 'easyInOut', duration: 1 }}>
             <div className="container">
                 <div className="row justify-content-center mb-4">
                     <div className="col-md-7 text-center">
@@ -45,7 +46,7 @@ const OurTeam = (): JSX.Element => {
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 };
 

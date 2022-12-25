@@ -1,17 +1,17 @@
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Redirect } from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom'
 
 import Button from '@material-ui/core/Button'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import TextField from '@material-ui/core/TextField'
-import Link from '@material-ui/core/Link'
 import Grid from '@material-ui/core/Grid'
 import Box from '@material-ui/core/Box'
 import Typography from '@material-ui/core/Typography'
 import Container from '@material-ui/core/Container'
 import { makeStyles } from '@material-ui/styles'
 import { useTranslation } from 'react-i18next'
+import { motion } from 'framer-motion/dist/framer-motion'
 
 import { login } from '../actions/auth'
 
@@ -46,12 +46,10 @@ const useStyles = makeStyles({
         }
     },
     link: {
-        '&.MuiTypography-root': {
-            color: '#73738D',
-            textDecoration: 'none',
-            fontWeight: 600,
-            fontSize: 18
-        }
+        color: '#73738D',
+        textDecoration: 'none',
+        fontWeight: 600,
+        fontSize: 18
     }
 })
 
@@ -104,7 +102,7 @@ const LoginPage = (props) => {
     }
 
     return (
-        <div className="vh-90">
+        <motion.div className="vh-90" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ easy: 'easyInOut', duration: 1 }}>
             <div className="centered-element">
                 <Container component="main" maxWidth="xs">
                     <CssBaseline />
@@ -160,7 +158,7 @@ const LoginPage = (props) => {
                             </Button>
                             <Grid container justifyContent="flex-end">
                                 <Grid item style={{margin: '10px auto'}}>
-                                    <Link href="/registration" variant="body2" className={classes.link} >
+                                    <Link to="/registration" className={classes.link} >
                                         {t("New user? Sign up to create your account")}
                                     </Link>
                                 </Grid>
@@ -169,7 +167,7 @@ const LoginPage = (props) => {
                     </Box>
                 </Container>
             </div>
-        </div>
+        </motion.div>
     )
 }
 

@@ -2,23 +2,67 @@ import './interactiveblock.scss'
 
 import { useState } from 'react'
 import Graph from "react-graph-vis"
-import ReactDOM from "react-dom"
 import { useTranslation } from 'react-i18next'
-import ReactTooltip from 'react-tooltip'
+import { motion } from 'framer-motion/dist/framer-motion'
+
+const animationHeader = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: custom => ({
+    opacity: 1,
+    transition: { delay: custom * 0.2 }, 
+  }),
+}
+
+const animationGraph = {
+  hidden: {
+    x: 100,
+    opacity: 0,
+  },
+  visible: custom => ({
+    x: 0,
+    opacity: 1,
+    transition: { delay: custom * 0.2 }, 
+  }),
+}
 
 
 const options = {
   layout: {
-    hierarchical: false
+    hierarchical: false,
+    randomSeed: 8,
   },
   edges: {
-    color: "#000000"
+    color: "#000000",
+  },
+  nodes: {
+    fixed: {
+      x: true,
+      y: true,
+    }
   },
   interaction:{
     hover: true,
-    zoomView: false
+    zoomView: false,
+    selectable: false,
   },
-  clickToUse: true
+  manipulation: {
+    enabled: false,
+    initiallyActive: true,
+  },
+  physics: {
+    enabled: false,
+    stabilization: {
+      enabled: true,
+      iterations: 100
+    },
+  },
+  configure: {
+    enabled: false,
+  },
+  
+  clickToUse: false
 };
 
 const InteractiveBlock = () => {
@@ -56,7 +100,7 @@ const InteractiveBlock = () => {
         
       },
       hoverNode:function(event){
-        setX(event.pointer.DOM.x)
+        setX(event.pointer.DOM.x-5)
         setY(event.pointer.DOM.y)
         setHeader('This is node')
         setText('Node is ...')
@@ -78,27 +122,27 @@ const InteractiveBlock = () => {
         setY(-10000)
         setHeader('')
         setText('')
-      }
+      },
     }
   })
   const { graph, events } = state;
 
   return (
-    <>
-      <div className='interactive-block_header'>This is interactive model</div>
-      <div className="p-2 text-center" style={{position: 'relative'}} class='interactive-block'>
+    <motion.div initial="hidden" whileInView="visible" viewport={{ amount: 0.3 }}>
+      <motion.div className='interactive-block_header' variants={animationHeader}>This is interactive model</motion.div>
+      <motion.div className="p-2 text-center interactive-block" style={{position: 'relative'}} variants={animationGraph}>
         <Graph graph={graph} options={options} events={events} style={{ height: "640px" }} />
         <div style={{position: 'absolute', left: `${x}px`, top: `${y}px`}}> 
-          <div class="interactive-block_right">
-            <div class="interactive-block_text-content">
+          <div className="interactive-block_right">
+            <div className="interactive-block_text-content">
                 <h3>{header}</h3>
                 <div>{text}</div>
             </div>
             <i></i>
           </div>
         </div>
-      </div>
-    </>
+      </motion.div>
+    </motion.div>
   );
 }
 

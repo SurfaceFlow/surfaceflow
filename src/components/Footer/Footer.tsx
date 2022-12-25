@@ -74,7 +74,7 @@ const Footer = (): JSX.Element => {
                     <Nav className="footer_nav-links">
                         <div className="footer_nav-header">{t("mapslocation")}</div>
                         <YMaps query={{lang: 'en_US'}}>
-                            <Map defaultState={{ center: [55.710855, 37.784904], zoom: 12 }} width="240px" height="150px" >
+                            <Map defaultState={{ center: [55.710855, 37.784904], zoom: 12 }} width="270px" height="150px" >
                                 <Placemark geometry={[55.710855, 37.784904]}/>
                             </Map>
                         </YMaps>

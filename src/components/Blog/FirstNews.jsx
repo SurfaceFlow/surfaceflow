@@ -1,12 +1,13 @@
 import './news.scss'
 import blog1 from '../../images/blog1.png'
 import { useTranslation } from 'react-i18next'
+import { motion } from 'framer-motion/dist/framer-motion'
 
-const FirstNews = (): JSX.Element => {
+const FirstNews = () => {
     const { t } = useTranslation()
 
     return (
-        <div className='news'>
+        <motion.div className='news' initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ easy: 'easyInOut', duration: 1 }}>
             <div className='news_header'>{t("headerfirstnews")}</div>
             <img
                 src={blog1}
@@ -14,7 +15,7 @@ const FirstNews = (): JSX.Element => {
                 className='news_img'
             />
             <div className='news_description'>{t("textfirstnews")}</div>
-        </div>
+        </motion.div>
     );
 };
 

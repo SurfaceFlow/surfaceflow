@@ -102,7 +102,7 @@ const LoginPage = (props) => {
     }
 
     return (
-        <motion.div className="vh-90" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ easy: 'easyInOut', duration: 1 }}>
+        <motion.div className="vh-90" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ easy: 'easyInOut', duration: 0.5 }}>
             <div className="centered-element">
                 <Container component="main" maxWidth="xs">
                     <CssBaseline />

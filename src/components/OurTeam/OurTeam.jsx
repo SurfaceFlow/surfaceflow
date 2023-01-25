@@ -8,7 +8,7 @@ const OurTeam = () => {
     const { t } = useTranslation()
 
     return (
-        <motion.div className="py-5 our_team" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ easy: 'easyInOut', duration: 1 }}>
+        <motion.div className="py-5 our_team" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ easy: 'easyInOut', duration: 0.5 }}>
             <div className="container">
                 <div className="row justify-content-center mb-4">
                     <div className="col-md-7 text-center">

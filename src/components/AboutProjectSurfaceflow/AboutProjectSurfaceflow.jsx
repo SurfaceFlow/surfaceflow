@@ -30,7 +30,7 @@ const AboutProjectSurfaceflow = () => {
     const { t } = useTranslation()
 
     return (
-        <motion.div className='about_project-surface' initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 1 }}>
+        <motion.div className='about_project-surface' initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.5 }}>
             <div className='text_container'>
                 <motion.div className='header' variants={headerAnimation} >
                     <h1 className="mx-5 text">{t("surfaceflowis")}</h1>

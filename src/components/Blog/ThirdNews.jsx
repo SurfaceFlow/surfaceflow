@@ -7,7 +7,7 @@ const ThirdNews = () => {
     const { t } = useTranslation()
 
     return (
-        <motion.div className='news' initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ easy: 'easyInOut', duration: 1 }}>
+        <motion.div className='news' initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ easy: 'easyInOut', duration: 0.75 }}>
             <div className='news_header'>{t("headerthirdnews")}</div>
             <img
                 src={blog3}

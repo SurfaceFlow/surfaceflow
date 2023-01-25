@@ -6,7 +6,7 @@ import { motion } from 'framer-motion/dist/framer-motion'
 
 const News = () => {
     return (
-        <motion.div style={{ padding: '0 65px' }} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ easy: 'easyInOut', duration: 1 }}>
+        <motion.div style={{ padding: '0 65px' }} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ easy: 'easyInOut', duration: 0.5 }}>
             <FirstNews />
             <hr />
             <SecondNews />

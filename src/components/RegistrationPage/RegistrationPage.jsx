@@ -4,13 +4,14 @@ import { useDispatch } from 'react-redux'
 import Button from '@material-ui/core/Button'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import TextField from '@material-ui/core/TextField'
-import Link from '@material-ui/core/Link'
+import { Link } from "react-router-dom"
 import Grid from '@material-ui/core/Grid'
 import Box from '@material-ui/core/Box'
 import Typography from '@material-ui/core/Typography'
 import Container from '@material-ui/core/Container'
 import { makeStyles } from '@material-ui/styles'
 import { useTranslation } from 'react-i18next'
+import { motion } from 'framer-motion/dist/framer-motion'
 
 import { register } from '../actions/auth'
 
@@ -45,12 +46,10 @@ const useStyles = makeStyles({
         }
     },
     link: {
-        '&.MuiTypography-root': {
-            color: '#73738D',
-            textDecoration: 'none',
-            fontWeight: 600,
-            fontSize: 18
-        }
+        color: '#73738D',
+        textDecoration: 'none',
+        fontWeight: 600,
+        fontSize: 18
     }
 })
 
@@ -117,7 +116,7 @@ const RegistrationPage = (props) => {
     }
 
     return (
-        <div className="vh-90">
+        <motion.div className="vh-90" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ easy: 'easyInOut', duration: 0.5 }}>
             <div className="centered-element">
                 <Container component="main" maxWidth="xs">
                     <CssBaseline />
@@ -189,7 +188,7 @@ const RegistrationPage = (props) => {
                             </Button>
                             <Grid container justifyContent="flex-end">
                                 <Grid item style={{margin: '10px auto'}}>
-                                    <Link href="/login" variant="body2" className={classes.link} >
+                                    <Link to="/login" variant="body2" className={classes.link} >
                                         {t("Already have an account? Sign in")}
                                     </Link>
                                 </Grid>
@@ -198,7 +197,7 @@ const RegistrationPage = (props) => {
                     </Box>
                 </Container>
             </div>
-        </div>
+        </motion.div>
     )
 }
 

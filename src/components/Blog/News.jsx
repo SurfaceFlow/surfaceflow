@@ -2,16 +2,17 @@ import './blog.scss'
 import FirstNews from './FirstNews'
 import SecondNews from './SecondNews'
 import ThirdNews from './ThirdNews'
+import { motion } from 'framer-motion/dist/framer-motion'
 
-const News = (): JSX.Element => {
+const News = () => {
     return (
-        <div style={{ padding: '0 65px' }}>
+        <motion.div style={{ padding: '0 65px' }} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ easy: 'easyInOut', duration: 0.5 }}>
             <FirstNews />
             <hr />
             <SecondNews />
             <hr />
             <ThirdNews />
-        </div>
+        </motion.div>
     );
 };
 

@@ -18,7 +18,7 @@ $this: '.footer';
     
     &_container {
         display: flex;
-        padding: 0px 65px 37px;
+        padding: 0px 100px 37px;
     }
 
     &_logo {
@@ -71,4 +71,8 @@ $this: '.footer';
             margin-bottom: 7px;
         }
     }
+}
+
+ymaps[class$="map"]:first-child:not(:last-child) {
+    display: none;
 }

@@ -2,6 +2,7 @@ $this: '.blog';
 
 #{$this} {
     display: flex;
+    padding: 0 40px;
 
     &_item {
         flex-grow: 1;
@@ -12,6 +13,8 @@ $this: '.blog';
         box-shadow: 2px 2px 5px rgb(0 0 0 / 28%);
         text-decoration: none;
         cursor: pointer;
+        position: relative;
+        min-height: 400px;
     }
 
     &_img {
@@ -21,7 +24,7 @@ $this: '.blog';
 
     &_text {
         text-align: start;
-        padding: 10px 15px 5px 15px;
+        padding: 10px 15px 20px 15px;
     }
 
     &_header {
@@ -42,5 +45,8 @@ $this: '.blog';
         font-weight: 700;
         color: #73738D;
         cursor: pointer;
+        position:absolute;
+        bottom:0;
+        padding-bottom: 5px;
     }
 }
